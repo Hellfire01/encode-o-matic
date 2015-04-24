@@ -1,7 +1,7 @@
 # encode-o-matic-cpp
 
-pour le moment un tout petit programme rigolo qui permet de faire du Césars, du Vigenère
-et une sorte de mélange rigolo entre des multiplications matricielles et un changement de base.
+Ce petit programme a pour but de présenter des méthodes de chiffrement qui ont soit été adaptées de méthodes existantes soit entièrement conçues par moi.
 
-j'aspire à en faire quelque chose de plus gros et grand à l'avenir ( l'ajout d'une interface
-serait un premier pas :p )
+Actuellement une curiiosité, le but est d'en faire quelque chose de plus grand avec une interface et des méthodes plus efficaces.
+
+Le premier objectif est de le rendre plus user-friendly.
