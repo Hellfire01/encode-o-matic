@@ -1,3 +1,4 @@
+#include <sstream>
 #include "function_prototypes.h"
 #include "utilitaires.h"
 
@@ -11,7 +12,7 @@ int cesars_user_choises () {
   while (42) {
     cout << "Vous avez choisit d'utiliser le Césars" << endl;
     cout << "Souhaitez vous : " << endl;
-    cout << "\033[1;36m-1\033[0;0m : retourner au menu précédent" << endl;
+    cout << "\033[1;36m-1\033[0;0m : retourner au menu précédent" << endl << endl;
     cout << "\033[1;36m1\033[0;0m : chiffrer" << endl;
     cout << "\033[1;36m2\033[0;0m : déchiffrer" << endl;
     user_choise = user_input();
@@ -108,9 +109,13 @@ int cesars_choises (int choise) {
       }
       input = user_text();
       if (choise == 1) {
-        chiffre_cesars(input, lib, lib_size, key);
+        cout << endl << "Votre texte chiffré :\033[1;35m" << endl;
+        cout << chiffre_cesars(input, lib, lib_size, key);
+        cout << "\033[0;0m" << endl << endl << endl;
       } else {
-        dechiffre_cesars(input, lib, lib_size, key);
+        cout << endl << "votre texte clair ( si vous avez fait la bonne combinaison ) :\033[1;35m" << endl;
+        cout << dechiffre_cesars(input, lib, lib_size, key);
+        cout << "\033[0;0m" << endl << endl << endl;
       }
       cout << "Que souhaitez vous faire maintenant ?" << endl;
       cout << "\033[1;36m-1\033[0;0m : retourner au menu précédent" << endl << endl;
@@ -142,38 +147,38 @@ int cesars_choises (int choise) {
   return (0);
 }
 
-void chiffre_cesars (char * & input, char const * & lib, int lib_size, int key) {
+string chiffre_cesars (char * & input, char const * & lib, int lib_size, int key) {
+  stringstream out;
   int tmp = 0;
   int i = 0;
   int input_size = strlen(input);
-  cout << endl << "Votre texte chiffré :\033[1;35m" << endl;
   while (i <= input_size) {
     if ((tmp = my_isin(input[i], lib)) >= 0) {
       tmp += (key % lib_size);
       tmp %= lib_size;
-      cout << lib[tmp];
+      out << lib[tmp];
     } else {
-      cout << input[i];
+      out << input[i];
     }
     i++;
   }
-  cout << "\033[0;0m" << endl << endl << endl;
+  return out.str();
 }
 
-void dechiffre_cesars (char * & input, char const * & lib, int lib_size, int key) {
+string dechiffre_cesars (char * & input, char const * & lib, int lib_size, int key) {
+  stringstream out;
   int tmp = 0;
   int i = 0;
   int input_size = strlen(input);
-  cout << endl << "votre texte clair ( si vous avez fait la bonne combinaison ) :\033[1;35m" << endl;
   while (i <= input_size) {
     if ((tmp = my_isin(input[i], lib)) >= 0) {
       tmp += lib_size - key % lib_size;
       tmp %= lib_size;
-      cout << lib[tmp];
+      out << lib[tmp];
     } else {
-      cout << input[i];
+      out << input[i];
     }
     i++;
   }
-  cout << "\033[0;0m" << endl << endl << endl;
+  return out.str();
 }

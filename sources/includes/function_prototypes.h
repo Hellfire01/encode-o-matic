@@ -24,9 +24,9 @@ using Eigen::MatrixXd;
 /* 102.cpp */
 int E_102_user_choises ();
 int E_102_choises (int choise);
-void chiffre_102(MatrixXd & text_matrix, MatrixXd & key_matrix, string & base);
 void user_input_to_matrix_base(MatrixXd & text_matrix, string & input, string & base);
-void  dechiffre_102(MatrixXd & text_matrix, MatrixXd & key_matrix, const char * lib);
+string chiffre_102(MatrixXd & text_matrix, MatrixXd & key_matrix, string & base);
+string dechiffre_102(MatrixXd & text_matrix, MatrixXd & key_matrix, const char * lib);
 
 /* 102_matrix_input.cpp */
 int numbers_only(string tmp);
@@ -39,23 +39,27 @@ void matrix_input_102(MatrixXd & out);
 int key_validator_102_base(string key, const string lib);
 int input_validator(string str, const string lib);
 
+/* v102.cpp */
+int  V_102_user_choises();
+void  V_102_choises(int choise);
 
 /* cesars.cpp */
 int cesars_choises(int choise);
 int cesars_user_choises();
-void chiffre_cesars (char * & input, char const * & lib, int lib_size, int key);
-void dechiffre_cesars(char * & input, char const * & lib, int lib_size, int key);
+string chiffre_cesars (char * & input, char const * & lib, int lib_size, int key);
+string dechiffre_cesars(char * & input, char const * & lib, int lib_size, int key);
 
 /* info.cpp */
 void info_C_and_V();
 void info_102();
+void info_v102();
 void info_alpha();
 void display_info();
 
 /* vigenere.cpp */
-void chiffre_vigenere(char * & input, char const * & lib, int lib_size, char * &key);
-void dechiffre_vigenere(char * & input, char const * & lib, int lib_size, char * &key);
-int key_check(char * &key, const char * &lib);
+string chiffre_vigenere(string & input, char const * lib, int lib_size, string & key);
+string dechiffre_vigenere(string & input, char const * lib, int lib_size, string & key);
+int key_check(string & key, const char * lib);
 int vigenere_choises (int choise);
 int vigenere_user_choises();
 

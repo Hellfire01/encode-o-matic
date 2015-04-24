@@ -18,6 +18,7 @@ SRCS	=	sources/fichiers/main.cpp						\
 		sources/fichiers/chiffrement/102/102.cpp				\
 		sources/fichiers/chiffrement/102/102_matrix_input.cpp		\
 		sources/fichiers/chiffrement/102/102_utilitaires.cpp		\
+		sources/fichiers/chiffrement/v102.cpp				\
 		sources/fichiers/chiffrement/vigenere.cpp				\
 		sources/fichiers/utilitaires/lib.cpp				\
 		sources/fichiers/utilitaires/isin.cpp				\
@@ -31,7 +32,7 @@ SRCS	=	sources/fichiers/main.cpp						\
 
 OBJS	= 	$(SRCS:.cpp=.o)
 
-CPPFLAGS	+= 	-Wall -Wextra
+CPPFLAGS	+=	-Wall -Wextra -g3
 CPPFLAGS	+=	-I ./sources/includes
 CPPFLAGS	+=	-I ./sources/librairies/eigen
 

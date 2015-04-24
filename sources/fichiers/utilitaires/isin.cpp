@@ -9,7 +9,6 @@ using namespace std;
 */
 
 int my_isin(char c, char * str) {
-
   int i = 0;
 
   while (str[i]) {
@@ -21,7 +20,6 @@ int my_isin(char c, char * str) {
 }
 
 int my_isin(char c, const char * str) {
-
   int i = 0;
 
   while (str[i]) {
@@ -33,7 +31,6 @@ int my_isin(char c, const char * str) {
 }
 
 int my_isin(char c, string & str) {
-
   int i = 0;
 
   while (str[i]) {
@@ -45,7 +42,6 @@ int my_isin(char c, string & str) {
 }
 
 int my_isin(char c, const string & str) {
-
   int i = 0;
 
   while (str[i]) {

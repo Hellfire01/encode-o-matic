@@ -2,6 +2,7 @@
 #define MATHS_H
 
 #include <Eigen/Dense>
+#include <sstream>
 
 /* bases.cpp */
 int     my_put_nbr_base(int nbr, const char * base);
@@ -11,6 +12,7 @@ int     my_getnbr_base(const char * str, const char * base);
 
 /* bases_string.cpp */
 int     my_put_nbr_base(int nbr, string & base);
+void    my_put_nbr_base_silent(int nbr, string & base, stringstream & out);
 int     check_neg(string & s, int mark = 0);
 int     check_base(string & base, int n);
 int     my_getnbr_base(string & str, string & base, int j = 0);

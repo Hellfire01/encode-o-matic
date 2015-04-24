@@ -27,6 +27,31 @@ int     my_put_nbr_base(int nbr, string & base) {
   return (nbr);
 }
 
+void     my_put_nbr_base_silent(int nbr, string & base, stringstream & out) {
+  int   nbrc;
+  int   basemax;
+
+  basemax = base.size();
+  nbrc = 1;
+  if (nbr < 0) {
+    out << "-";
+    nbr = nbr *(-1);
+  }
+  if (nbr == 0) {
+    out << base[0];
+    return ;
+  }
+  while (nbrc < nbr)
+    nbrc = nbrc * basemax;
+  if (nbrc > nbr)
+    nbrc = nbrc / basemax;
+  while (nbrc >= 1) {
+    out << (base[(nbr / nbrc) % basemax]);
+    nbrc = nbrc / basemax;
+  }
+  return ;
+}
+
 /* fonctions pour getnbrbase à partir d'ici */
 
 int     check_neg(string & s, int mark) {

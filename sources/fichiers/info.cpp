@@ -19,6 +19,13 @@ void info_102() {
    cout << endl;
 }
 
+void info_v102() {
+   cout << "Le V102 est une méthode qui utilise le 102 et le Vigenère" << endl;
+   cout << "Le 102 est utilisé en premier et le Vigenère ensuite pour camoufler les bases du 102" << endl;
+   cout << "( et faire de cette faiblaisse une force )" << endl;
+   cout << endl;
+}
+
 void info_alpha() {
    cout << "La plupart des méthodes de chiffrement utilisées font usage d'alphabets comme étant des variables" << endl;
    cout << "Ces alphabets permettent de déterminer quels seront les caractères du texte ciblé qui seront chiffrés" << endl;
@@ -61,9 +68,10 @@ void display_info() {
       cout << "\033[1;36m-1\033[0;0m : menu principal" << endl << endl;
       cout << "\033[1;36m1\033[0;0m : infos sur le Césars et le Vigenère" << endl;
       cout << "\033[1;36m2\033[0;0m : infos sur le 102" << endl;
-      cout << "\033[1;36m3\033[0;0m : infos sur les alphabets" << endl;
+      cout << "\033[1;36m3\033[0;0m : infos sur le v102" << endl;
+      cout << "\033[1;36m4\033[0;0m : infos sur les alphabets" << endl;
       user_choise = user_input();
-      while (user_choise == 0 || user_choise < -1 || user_choise > 3) {
+      while (user_choise == 0 || user_choise < -1 || user_choise > 4) {
          cout << "le nombre saisi : '" << user_choise << "' ne correspond pas à un des choix du menu" << endl;
          user_choise = user_input();
       }
@@ -78,6 +86,9 @@ void display_info() {
          info_102();
          break;
       case 3 :
+         info_v102();
+         break;
+      case 4 :
          info_alpha();
          break;
       default :

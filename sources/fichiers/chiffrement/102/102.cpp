@@ -1,9 +1,8 @@
+#include <sstream>
 #include <math.h>
 #include "function_prototypes.h"
 #include "my_maths.h"
 #include "utilitaires.h"
-
-/* ce fichier regroupe toutes les fonctions centrées autours du Césars */
 
 using namespace std;
 using Eigen::MatrixXd;
@@ -54,7 +53,7 @@ int E_102_choises (int choise) {
   MatrixXd output;
 
   matrix_initialisator(key_matrix);
-  while (42) { // l'utilisateur souhaite continuer à chiffrer en Césars
+  while (42) {
     cout << "Vous avez choisit d'utiliser le 102" << endl;
     if (choise == 1) {
       cout << "Ici, c'est l'alphabet le plus complet qui est utilisé ( le n°4 ) par défaut" << endl;
@@ -63,7 +62,7 @@ int E_102_choises (int choise) {
     if (choise == 1) {
       cout << "Le 102 chiffrement utilise un total de 2 clefs, une pour la matrice et une seconde pour la base" << endl;
       c_str("Note : ", 'y');
-      cout << "Il est évident qu'avoir 4 nombres différents garantit une meilleur sécurité" << endl;
+      cout << "Il est évident qu'avoir 4 nombres différents garantit une meilleure sécurité" << endl;
       c_str("Note : ", 'y');
       cout << "Les nombres négatifs ou nulls ne sont pas acceptés" << endl;
     } else {
@@ -88,16 +87,21 @@ int E_102_choises (int choise) {
       } else {
         cout << "Veuillez écrire le texte que vous souhaitez déchiffrer" << endl;
       }
+      ret = 1;
       while (ret == 1) {
         user_string(input);
         ret = input_validator(input, lib);
       }
       if (choise == 1) {
         user_input_to_matrix(text_matrix, input, lib);
-        chiffre_102(text_matrix, key_matrix, key_base);
+        cout << "Votre texte chiffré : \033[1;35m" << endl;
+        cout << chiffre_102(text_matrix, key_matrix, key_base);
+        cout << "\033[0;0m" << endl << endl;
       } else {
         user_input_to_matrix_base(text_matrix, input, key_base);
-        dechiffre_102(text_matrix, key_matrix, lib);
+        cout << "Votre texte dechiffré : \033[1;35m" << endl;
+        cout << dechiffre_102(text_matrix, key_matrix, lib);
+        cout << "\033[0;0m" << endl << endl;
       }
       cout << "Que souhaitez vous faire maintenant ?" << endl;
       cout << "\033[1;36m-1\033[0;0m : retourner au menu précédent" << endl << endl;
@@ -156,32 +160,30 @@ void  user_input_to_matrix_base(MatrixXd & text_matrix, string & input, string &
   }
 }
 
-void  dechiffre_102(MatrixXd & text_matrix, MatrixXd & key_matrix, const char * lib) {
+string  dechiffre_102(MatrixXd & text_matrix, MatrixXd & key_matrix, const char * lib) {
+  stringstream out;
   MatrixXd tmp = key_matrix.inverse() * text_matrix;
   int a = 0;
   int b;
 
-  c_str("\nVotre texte déchiffré :\n", 'b');
-  cout << "\033[1;31m" << endl;
   while (a < tmp.cols()) {
     b = 0;
     while (b < tmp.rows()) {
-      cout << lib[(int)round(tmp(b,a))]; // la fonction round() est utilisée avant le cast pour éviter les pertes de données liées à celui-ci
+      out << lib[(int)round(tmp(b,a))]; // la fonction round() est utilisée avant le cast pour éviter les pertes de données liées à celui-ci
       b++;
     }
     a++;
   }
-  cout << "\033[0;0m" << endl << endl;
+  return (out.str());
 }
 
-void  chiffre_102(MatrixXd & text_matrix, MatrixXd & key_matrix, string & base) {
+string  chiffre_102(MatrixXd & text_matrix, MatrixXd & key_matrix, string & base) {
+  stringstream out;
   MatrixXd output;
   int a = 0;
   int b;
   int space = 1;
   
-  c_str("\nVotre texte chiffré :\n", 'b');
-  cout << "\033[1;31m" << endl;
   output = key_matrix * text_matrix;
   while (a < output.cols()) {
     b = 0;
@@ -189,12 +191,12 @@ void  chiffre_102(MatrixXd & text_matrix, MatrixXd & key_matrix, string & base) 
       if (space == 1) {
         space = 0;
       } else {
-        cout << " ";
+        out << " ";
       }
-      my_put_nbr_base(output(b,a), base);        
+      my_put_nbr_base_silent(output(b,a), base, out); // cette fonction se charge d'écrire dans le stringstream
       b++;
     }
     a++;
   }
-  cout << "\033[0;0m" << endl << endl;
+  return out.str();
 }

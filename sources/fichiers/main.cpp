@@ -19,9 +19,10 @@ int main () {
     cout << "\033[1;36m1\033[0;0m : Césars" << endl;
     cout << "\033[1;36m2\033[0;0m : Vigenère" << endl;
     cout << "\033[1;36m3\033[0;0m : 102 ( matrice + base )" << endl;
+    cout << "\033[1;36m4\033[0;0m : v102 ( ombinaison 102 et Vigenère )" << endl;
     user_choise = user_input();
 
-    while (user_choise == 0 || user_choise < -2 || user_choise > 3) {
+    while (user_choise == 0 || user_choise < -2 || user_choise > 4) {
       cout << "le nombre saisi : '" << user_choise << "' ne correspond pas à un des choix du menu" << endl;
       user_choise = user_input();
     }
@@ -43,6 +44,9 @@ int main () {
         break;
       case 3 :
         E_102_user_choises();
+        break;
+      case 4 :
+        V_102_user_choises();
         break;
       default :
         cout << "hum, c'est embarassant : le choix reçu est : \"" << user_choise << "\" celà n'aurait pas dut être possible" << endl;

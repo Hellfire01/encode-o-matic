@@ -1,3 +1,4 @@
+#include <sstream>
 #include "function_prototypes.h"
 
 using namespace std;
