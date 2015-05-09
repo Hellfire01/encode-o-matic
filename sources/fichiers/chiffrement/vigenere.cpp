@@ -207,7 +207,7 @@ string dechiffre_vigenere(string & text, char const * lib, int lib_size, string 
       out << lib[tmp];
     } 
     else {
-      cout << text[i_text];
+      out << text[i_text];
       i_key = i_key - 1;
     }
     if (key[i_key +1] == '\0') {
