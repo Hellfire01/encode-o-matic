@@ -1,0 +1,1 @@
+ici est le core : cette partie est utilisée par toutes les autres

@@ -1,0 +1,1 @@
+ici les fichiers avec une execution et affichage via terminal ( affichage par defaut )

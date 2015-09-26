@@ -1,5 +1,5 @@
 *.o
+sources/*.o
+encode-o-matic
 *~
-*#
-README.md
-to_do
+.obj

@@ -1,0 +1,36 @@
+codes à l'étude ( dans l'ordre ) :
+
+to do court terme :
+- faire une grande fonction de type utilitaire pour récupérer et set les bonnes valeurs sur le 102 ( base
+  et clef afin d'éviter une grosse répétion de code )
+
+Notes :
+- rendre le 102 plus costeau :
+    - modifier la base du 102 de façon à forcer une taille de 3 ( le premier caractère
+        pour le signe négatif => le but est de pouvoir utiliser '-' dans la base )
+    - faire ensuite la même chose pour les espaces ( la base prend alors une taille
+        de 4 [ le dernier caractère est le séparateur ] => permet d'utiliser
+        l'espace comme caractère de base )
+- ajouter des infos sur le code à l'aide de Doxygen
+
+méthode ++ :
+- chiffrement "dictionnaire" ( à combiner avec les autres méthodes )
+    cette méthode consiste à mettre un dictionnaire ( plus de 60 000 mots ) dans une ables SQL.
+    chaque ligne possède comme première colonne le mot en clair et toutes les colonnes suivantes sont
+    des mots "subtitus" ( on parle de BEAUCOUP de colonnes - le top serait plus de 100 en sachant
+    que le mot en clair peut y être aussi - ) ==> potentiellement à générer par clef.
+    Une fois l'environnement prêt, la méthode consiste à échanger chaque mot en clair repéré
+    dans le texte à chiffrer ( fortement encourager la correction orthographique pour un
+    meilleur chiffrement ) par un des mots présents sur la même ligne.
+    
+
+projet hub
+- le mélangeur
+- brailleur
+- constellation
+
+projet hub plus :
+- contellation à partir de modèles ( objet 3D ) ==> les surfaces du modèle
+    sont effacées au profil d'une très grande quantité de points ( suffisament
+    pour ne pas voir la différence avec le modèle d'origine à moins de
+    fortement zoomer ). La figure obtenue est alors utilisée au lieu des fractales.

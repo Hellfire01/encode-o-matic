@@ -1,0 +1,209 @@
+Infos sur le V3D et le V4D
+
+V
+
+Tout d'abord ; un tableau de vigenère ressemble à ceci ( version simplifiée ) :
+
+              texte de la clef
+                   a b c d
+                  ---------
+              a  | a b c d |
+texte clair   b  | b c d a |
+              c  | c d a b |
+              d  | d a b c |
+                 -----------
+
+Il est important de noter que la clef ne doit comporter QUE des caractères de l'alphabet ( ici
+l'alphabet est "abcd" ). Dans mon cas je choisis de ne pas chiffrer / déchiffrer des caractères
+non présents dans l'alphabet ( ce qui peut présenter une faille de sécurité si mal utilisé ).
+
+Comment ça marche ?
+
+il faut :
+- une clef ( ex : dbc )
+- un texte ( ex : abbacd )
+
+La clef est lue sur sa colonne et le texte en même temps sur sa ligne.
+Si la clef est trop courte ( ce qui est très souvent le cas ), on la lit en boucle jusqu'à la fin
+du texte.
+Pour cherche le caractère du tableau qui possède se situe sur la ligne du caractère du texte et la
+colonne du caractère de la clef. Dans cet exemple les caractères sont miots en majuscule quand ils
+sont lus :
+
+              texte de la clef              texte de la clef
+      1)           a b c[D]           2)         a[B]c d
+                 -----------                   -----------
+             [A] | a b c(D)|                a  | a b c d |
+      texte   b  | b c d a |       texte   [B] | b(C)d a |
+              c  | c d a b |                c  | c d a b |
+              d  | d a b c |                d  | d a b c |
+                 -----------                   -----------
+
+1) clef = 'd' ; texte = 'a' = 'd'
+2) clef = 'b' ; texte = 'b' = 'c'
+
+              texte de la clef              texte de la clef
+      3)           a b[C]d            4)         a b c[D]
+                 -----------                   -----------
+              a  | a b c d |               [A] | a b c(D)|
+     texte   [B] | b c(D)a |       texte    b  | b c d a |
+              c  | c d a b |                c  | c d a b |
+              d  | d a b c |                d  | d a b c |
+                 -----------                   -----------
+
+3) clef = 'c' ; texte = 'b' = 'd'
+4) clef = 'd' ; texte = 'a' = 'd'
+
+              texte de la clef              texte de la clef
+      5)           a[B]c b            6)         a b[C]d
+                 -----------                   -----------
+              a  | a b c d |                a  | a b c d |
+     texte    b  | b c d a |       texte    b  | b c d a |
+             [C] | c(D)a b |                c  | c d a b |
+              d  | d a b c |               [D] | d a(B)c |
+                 -----------                   -----------
+
+5) clef = 'b' ; texte = 'c' = 'd'
+6) clef = 'c' ; texte = 'd' = 'b'
+
+texte en chiffré en sortie : "dcdddb"
+
+Pour déchiffrer on lit la colonne du caractère de la clef et c'est sur cette colonne que l'on cherche
+le caractère du texte chiffré qui à son tour, donnera sur la ligne le caractère du texte clair.
+
+Si l'on reprend ce shéma :
+
+              texte de la clef              texte de la clef
+      1)           a b c[D]           2)         a[B]c d
+                 -----------                   -----------
+             (A) | a b c[D]|                a  | a b c d |
+texte         b  | b c d a |  texte        (B) | b[C]d a |
+              c  | c d a b |                c  | c d a b |
+              d  | d a b c |                d  | d a b c |
+                 -----------                   -----------
+
+1) clef = 'd' ; texte chiffré = 'd' = texte clair 'a'
+2) clef = 'b' ; texte chiffré = 'c' = texte clair 'b'
+
+[ et ainsi de suite ]
+
+
+V3D
+
+Le cas du V3D est un peu plus complexe : la méthode de Vigenère s'apparente à un tableau à deux dimentions ;
+le V3D fait usage de 3 ( et 4 pour le V3D ).
+
+Comment ça marche :
+
+Avec la méthode de Vigenère il n'est possible que d'obtenir un seul caractère par combinaison caractère texte
+chiffré / clair + caractère clef.
+Le V3D fait lui usage d'ensembles de définition, du coup, un carré V3D ressemble à ceci :
+
+                         texte de la clef
+                     a       b       c       d
+                 ---------------------------------
+              a  | e f g   k l m   q r s   w x y |
+                 | h i j   n o p   t u v   z ! ? |
+  texte          |                               |
+              b  | k l m   q r s   w x y   e f g |
+                 | n o p   t u v   z ! ?   h i j |
+                 |                               |
+              c  | q r s   w x y   e f g   k l m |
+                 | t u v   z ! ?   h i j   n o p |
+                 |                               |
+              d  | w x y   e f g   k l m   q r s |
+                 | z ! ?   h i j   n o p   t u v |
+                 ---------------------------------
+
+Le V3D s'utilise presque de la même façon que le Vigenère original, la différence réside dans les ensembles
+de définition qui remplacent les lettres ce qui implique que tout ceci est correct en même temps :
+
+clef = 'a' ; texte = 'a' = 'e'
+clef = 'a' ; texte = 'a' = 'f'
+clef = 'a' ; texte = 'a' = 'g'
+clef = 'a' ; texte = 'a' = 'h'
+clef = 'a' ; texte = 'a' = 'i'
+clef = 'a' ; texte = 'a' = 'j'
+
+Ici c'est utilisé avec un alphabet de taille 4 ( "abcd" ) mais les alphabets utilisés pourront faire plus de 80
+caractères ( comme le n°4 d'encode-o-matic : "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 !\"#$%&'()*+,-./[\\]^_`{<|=}>~?" ).
+Comme l'ascii ne comporte "que" 256 caractères ( en pratique moins sont utilisables ) il est impossible d'attribuer
+suffisament de caractères pour avoir quoi que ce soit d'utilisable. La solution est donc d'utiliser des combinaisons de caractères
+à taille fixe par méthode ce qui peut donner :
+
+                         texte de la clef
+                     a       b       c       d      ...
+                 -------------------------------------------
+              a  |  efg     klm     qrs     wxy     ...
+                 |  hij     nop     tuv     z!?     ...
+                 |  1t4     b3z     ?Vz     TTy     ...
+                 |  !%t     tbU     -y8     o54     ...
+  texte          |                              
+              b  |  klm     qrs     wxy     ...     ...
+                 |  nop     tuv     z!?     ...     ...
+                 |  b3z     ?Vz     TTy     ...     ...
+                 |  tbU     -y8     o54     ...     ...
+                 |                               
+              c  |  qrs     wxy     ...     ...     ...
+                 |  tuv     z!?     ...     ...     ...
+                 |  ?Vz     TTy     ...     ...     ...
+                 |  -y8     o54     ...     ...     ...
+                 |                              
+              d  |  wxy     ...     ...     ...     ...
+                 |  z!?     ...     ...     ...     ...
+                 |  TTy     ...     ...     ...     ...
+                 |  o54                          
+                 |                              
+             ... |  ...     ...     ...     ...     ...
+                 |
+
+Ce qu'il faut savoir :
+Cette méthode est générée avec une seed ce qui veut dire qu'il y a une infinité de combinaisons possibles.
+La seed fait partit de la clef => si la méthode n'est pas trouvée dans les fichiers elle est générée.
+La seed détermine deux paramètre pour la génération ( qui seront les mêmes pour toute la génération ) :
+ - la taille des ensembles de définitions ( ici 4 )
+ - la quantité de caractères utilisés pour une combinaison ( min 3, pas de max ) ( ici 3 )
+ 
+Il est important de noter que chaque combinaison de caractères est absolument unique au sein de la même
+méthode ainsi :
+
+                          texte de la clef
+                     a       b       c       d      ...
+                 -------------------------------------------
+              a  |  efg     klm     qrs     wxy     ...
+      teste      |  hij     efg     tuv     z!?     ...
+                 |  1t4     b3z     efg     TTy     ...
+                 |  !%t     tbU     -y8     efg     ...
+
+Ceci est impossible car la combinaison "efg" est utilisée plusieurs fois => cela résulterait en une perte
+d'informations lors du chiffrement.
+
+Le shéma de fonctionnement complet du V3D ( avec toutes les fonctions / méthodes autours ) ressemble à ceci :
+
+           user input   ==============> generator ---------------------------|
+         ( texte + clef + seed )            |              ( texte + clef )  |
+                                            | ( seed )                       |
+                                            |                                |
+                                            V                                |
+                                génère une nouvelle méthode                  V
+                                ou utilise celle qui possède -------------> V3D ----------> ouput
+                                la même seed                   ( méthode )       ( texte )
+                                            
+Le générator est la partie qui est en charge de générer la méthode avec une seed ou de se servir de
+celle qui existe déjà ( si celle-ci a exactement la même seed ) ==> permet d'augmenter la quantité
+de combinaisons
+
+Le V3D fait usage d'une autre foncion en charge de regarder les fréquences d'utilisation des lettres afin
+de les faire disparaitre ( ou très fortement les égaliser ) ainsi, la lettre 'e' qui est la plus utilisée
+en français se verait laisser utiliser tout son ensemble de définition tandis que le 'w', bien moins utilisé
+se vérrait réduire son ensemble.
+Note : un ensemble n'est JAMAIS agrandit, uniquement réduit ( pour éviter de faire des réatributions de combinaisons
+faites à partir de fréquences qui ne peuvent plus être lues => perte d'informations garantie )
+La méthode s'inspire de celle du mathématicien Al Kindi ( étude de fréquences ) et vise précisément à la rendre
+inutilisable
+
+V4D
+
+La méthode V4D ajoute une dimention en faisant usage d'une multitude de V3D ( qui ne font alors plus usage de la méthode
+d'Al Kindi ( plus besoin ) ). Pour ce faire, le V4D fait usage d'une clef supplémentaire pour déterminer quand, pour quelle
+longueur et dans quel ordre sont utilisés les méthodes V3D ( qui utilisent alors la première clef normalement )

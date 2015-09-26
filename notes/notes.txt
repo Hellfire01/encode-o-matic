@@ -1,0 +1,96 @@
+shéma de la méthode de chiffrement SDV4D10XV3D
+
+   [] C ( césears )
+            |
+            |
+            |
+            V
+   [] V ( vigenère ) -------> [] D ( dico )
+        |        |                  |    |
+        |        |                  |    V
+        |        |                  |  [] SD ( super dico
+        |        |                  |      |   L=> dico multilingue )
+        |        |                  |      |
+        |        |                  |      |
+        |        |                  |      |     [] 102
+        |        V                  O      O       | |
+        |      () 102V <---------------------------| | 
+        V           |               O      O         |
+    [] V3D          V               |      |         V
+  ( vigenère  ----> () V3D102V      |      |     [] 10X ( 102 à taille variable )
+    amélioré )         |            |      |         |
+        |              |            |      |         |
+        |              V            O      O         |
+        |          () V3D10XV <----------------------|
+        |              |            O      O
+        |              |            |      |
+        |              |            V      |
+        |              |----> () DV3D10XV  |
+        |                           |      |
+        |                           V      V
+        |                        () SDV3D10XV
+        |                               |
+        V                               V
+      [] V4D ------------------> () SDV4D10XV3D
+   ( V3D amélioré )
+
+
+ [] = brique ( cette méthode ne dépend pas d'autres méthodes )
+ () = assemblage ( méthode qui regroupe plusieurs briques )
+
+
+ Actuellement, toutes les méthodes sont faites indépendament : les briques mais aussi
+ les assemblages. Le but ici est de faire un "processeur" ou "constructeur" dont le
+ but est de faire n'importe quel assemblage sur demande.
+ Pour ce faire il recevra une liste chainée contenant les classes souhaitées, elles
+ seront alors utilisées dans l'ordre donné.
+ Avec cette méthode, obtenir un nouvel assemblage ne requierait litéralement que
+ d'envoyer une nouvelle liste chainée au constructeur ( soit un gain de temps assez
+ important ).
+
+
+
+
+nouveau plan pour le 102 :
+
+
+                         ________________102_box_______________________________________
+                         |                                                            |
+key input   -----------------> matrix check ---------> matrix stored ---              |
+( matrix )               |           |       (true)                    |              |
+                         |           |                                 |              |
+      output enum <-------------------                                 |              |
+                         |                                             |              |
+                         |                                             |              |
+                         |                                             |              |
+base input -----------------> base check -----------> base stored ---- |              |
+                         |           |       (true)                  | |              |
+                         |           |                               | |              |
+      output enum <-------------------                               | |              |
+                         |                                           | |              |
+                         |                                           | |              |
+text input -------------------------> input validator -----------O   | |   O---------------> return NULL &&
+        |  ( with check )|                     |      ( false )      | |              |      set output enum
+        |                |                     | ( true )            | |              |
+        |                |                     |                     V V              |
+        L--------------------------------------L---------------> encrytion && -------------> output string
+      ( without check )  |                                       decryption           |
+                         |                                                            |
+                         |                                                            |
+                         |                              state enum ------------------------> status enum
+                         |                                ( output )                  |
+                         |                                                            |
+full input -------------------------------> base check    -|                          |
+( base +                 |  ( check )   L-> matrix check  -|                          |
+  matrix key +           |              L-> input check   ---------------------------------> return NULL &&
+  input )                |                                 |      ( if one or more    |      set struct with all
+       |                 |                                 |          is false )      |      enum
+       |                 |                                 |                          |
+       |                 |                                 | ( if all true )          |
+       |                 |                                 V                          |
+       L------------------------------------------> encryption && -------------------------> output string
+                         |  ( no check )            decryption                        |      ( with data loss or segmentation
+                         |                                                            |        fault if bad carac )
+                         |                                                            |
+                         |____________________________________________________________|
+
