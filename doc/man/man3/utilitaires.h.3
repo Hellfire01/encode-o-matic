@@ -1,0 +1,80 @@
+.TH "includes/fichiers/utilitaires.h" 3 "Sun Sep 27 2015" "encode-o-matic" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+includes/fichiers/utilitaires.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <string>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<typename T > void \fBno_tabs\fP (T str)"
+.br
+.ti -1c
+.RI "template<typename T > int \fBno_spaces_duplicates\fP (T str)"
+.br
+.ti -1c
+.RI "template<typename T > void \fBno_space_in_begining\fP (T str)"
+.br
+.ti -1c
+.RI "template<typename T > void \fBno_space_in_end\fP (T str)"
+.br
+.ti -1c
+.RI "template<typename T > void \fBepur_str\fP (T str)"
+.br
+.ti -1c
+.RI "template<typename T > int \fBmy_isin\fP (char c, T str)"
+.br
+.ti -1c
+.RI "const char * \fBlib_choice\fP (int lib)"
+.br
+.ti -1c
+.RI "int \fBuser_input\fP ()"
+.br
+.ti -1c
+.RI "void \fBuser_string\fP (std::string &in)"
+.br
+.ti -1c
+.RI "template<typename T > void \fBc_str\fP (T str, char color, int thick=0)"
+.br
+.ti -1c
+.RI "char \fBlib_char_check\fP (int lib, std::string const &input)"
+.br
+.ti -1c
+.RI "bool \fBlib_bool_check\fP (int lib, std::string const &input)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "template<typename T > void c_str (T str, char color, int thick = \fC0\fP)"
+
+.SS "template<typename T > void epur_str (T str)"
+
+.SS "bool lib_bool_check (int lib, std::string const & input)"
+
+.SS "char lib_char_check (int lib, std::string const & input)"
+
+.SS "const char* lib_choice (int lib)"
+
+.SS "template<typename T > int my_isin (char c, T str)"
+
+.SS "template<typename T > void no_space_in_begining (T str)"
+
+.SS "template<typename T > void no_space_in_end (T str)"
+
+.SS "template<typename T > int no_spaces_duplicates (T str)"
+
+.SS "template<typename T > void no_tabs (T str)"
+
+.SS "int user_input ()"
+
+.SS "void user_string (std::string & in)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for encode-o-matic from the source code\&.

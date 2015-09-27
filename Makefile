@@ -56,9 +56,9 @@ CFLAGS	+= -I $(INCDIR)/fichiers
 CFLAGS	+= -I $(INCDIR)/term
 CFLAGS	+= -I $(INCDIR)/instant
 CFLAGS	+= -I $(INCDIR)/graph
-CFLAGS	+= -I ./sources/librairies/eigen
+CFLAGS	+= -I ./librairies/eigen
 #décommenter pour debug
-CFLAGS  += -g3
+#CFLAGS  += -g3
 
 OBJS	=	$(SRCS:%.cpp=$(OBJDIR)/%.o)
 

@@ -1,0 +1,118 @@
+.TH "Brick" 3 "Sun Sep 27 2015" "encode-o-matic" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Brick \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Brick\&.hpp>\fP
+.PP
+Inherited by \fB_102\fP, \fBCesars\fP, and \fBVigenere\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBidentity\fP { \fBC\fP, \fBV\fP, \fBV3D\fP, \fB_102\fP, \fB_10X\fP, \fBD\fP, \fBSD\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBget_lib\fP (int lib)"
+.br
+.ti -1c
+.RI "virtual void \fBpresent\fP ()=0"
+.br
+.ti -1c
+.RI "virtual void \fBget_key\fP ()=0"
+.br
+.ti -1c
+.RI "virtual \fBidentity\fP \fBwho\fP ()=0"
+.br
+.ti -1c
+.RI "virtual std::string \fBchiffre\fP (std::string &input)=0"
+.br
+.ti -1c
+.RI "virtual std::string \fBdechiffre\fP (std::string &input)=0"
+.br
+.ti -1c
+.RI "\fBBrick\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~Brick\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "const char * \fB_lib\fP"
+.br
+.ti -1c
+.RI "int \fB_lib_size\fP"
+.br
+.in -1c
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBBrick::identity\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIC \fP\fP
+.TP
+\fB\fIV \fP\fP
+.TP
+\fB\fIV3D \fP\fP
+.TP
+\fB\fI_102 \fP\fP
+.TP
+\fB\fI_10X \fP\fP
+.TP
+\fB\fID \fP\fP
+.TP
+\fB\fISD \fP\fP
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Brick::Brick ()"
+
+.SS "Brick::~Brick ()\fC [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual std::string Brick::chiffre (std::string & input)\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fB_102\fP, \fBVigenere\fP, and \fBCesars\fP\&.
+.SS "virtual std::string Brick::dechiffre (std::string & input)\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fB_102\fP, \fBVigenere\fP, and \fBCesars\fP\&.
+.SS "virtual void Brick::get_key ()\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fB_102\fP, \fBVigenere\fP, and \fBCesars\fP\&.
+.SS "void Brick::get_lib (int lib)"
+
+.SS "virtual void Brick::present ()\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fB_102\fP, \fBVigenere\fP, and \fBCesars\fP\&.
+.SS "virtual \fBidentity\fP Brick::who ()\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fB_102\fP, \fBVigenere\fP, and \fBCesars\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "const char* Brick::_lib\fC [protected]\fP"
+
+.SS "int Brick::_lib_size\fC [protected]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for encode-o-matic from the source code\&.

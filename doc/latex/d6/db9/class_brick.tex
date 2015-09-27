@@ -1,0 +1,174 @@
+\hypertarget{class_brick}{}\section{Brick Class Reference}
+\label{class_brick}\index{Brick@{Brick}}
+
+
+{\ttfamily \#include $<$Brick.\+hpp$>$}
+
+Inheritance diagram for Brick\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d6/db9/class_brick}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_brick_af32354a4d8d1275db35660a96a2cfa3e}{identity} \{ \\*
+\hyperlink{class_brick_af32354a4d8d1275db35660a96a2cfa3eaf72c0102bd6b6f8f6f835ab490e1cd16}{C}, 
+\hyperlink{class_brick_af32354a4d8d1275db35660a96a2cfa3ea35e09d567643db467ad9edfbb0574acc}{V}, 
+\hyperlink{class_brick_af32354a4d8d1275db35660a96a2cfa3ea5a5f31986f285ab13f2cf5cd3022c5e2}{V3\+D}, 
+\hyperlink{class_brick_af32354a4d8d1275db35660a96a2cfa3ea2cb1166fdee35603cf114800f3a101ef}{\+\_\+102}, 
+\\*
+\hyperlink{class_brick_af32354a4d8d1275db35660a96a2cfa3ea715641459a1350fed267ec501d8c27a5}{\+\_\+10\+X}, 
+\hyperlink{class_brick_af32354a4d8d1275db35660a96a2cfa3ea33b4768f26d523132928e96355b5540f}{D}, 
+\hyperlink{class_brick_af32354a4d8d1275db35660a96a2cfa3ea961676a52649c6acfe35d6df2b89bbbf}{S\+D}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_brick_a3e683a0fa3648b5a758b6f12d57365ab}{get\+\_\+lib} (int lib)
+\item 
+virtual void \hyperlink{class_brick_aa1e9b549787dedc030860f8c75482c8c}{present} ()=0
+\item 
+virtual void \hyperlink{class_brick_aeec3d78d8d03e207b4154ff06f637bbe}{get\+\_\+key} ()=0
+\item 
+virtual \hyperlink{class_brick_af32354a4d8d1275db35660a96a2cfa3e}{identity} \hyperlink{class_brick_af6ba737fda1fda2d3fba50de23cbaff0}{who} ()=0
+\item 
+virtual std\+::string \hyperlink{class_brick_a1cddb42fe77c9b6d140004d01ff7ab5b}{chiffre} (std\+::string \&input)=0
+\item 
+virtual std\+::string \hyperlink{class_brick_afa3a68ba4f4babecadc6dfd05a2d2040}{dechiffre} (std\+::string \&input)=0
+\item 
+\hyperlink{class_brick_aa29d678c3d901c7b18cbc3a27a51be17}{Brick} ()
+\item 
+virtual \hyperlink{class_brick_a0e27476ccaeaed1d61a06bddf247c8ee}{$\sim$\+Brick} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{class_brick_ae1175c82acc7e4e74a4cbe27ba75ae66}{\+\_\+lib}
+\item 
+int \hyperlink{class_brick_a990cb3ac8d11d28aa1fa68a4583ed704}{\+\_\+lib\+\_\+size}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{class_brick_af32354a4d8d1275db35660a96a2cfa3e}{}\index{Brick@{Brick}!identity@{identity}}
+\index{identity@{identity}!Brick@{Brick}}
+\subsubsection[{identity}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Brick\+::identity}}\label{class_brick_af32354a4d8d1275db35660a96a2cfa3e}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{C@{C}!Brick@{Brick}}\index{Brick@{Brick}!C@{C}}\item[{\em 
+\hypertarget{class_brick_af32354a4d8d1275db35660a96a2cfa3eaf72c0102bd6b6f8f6f835ab490e1cd16}{}C\label{class_brick_af32354a4d8d1275db35660a96a2cfa3eaf72c0102bd6b6f8f6f835ab490e1cd16}
+}]\index{V@{V}!Brick@{Brick}}\index{Brick@{Brick}!V@{V}}\item[{\em 
+\hypertarget{class_brick_af32354a4d8d1275db35660a96a2cfa3ea35e09d567643db467ad9edfbb0574acc}{}V\label{class_brick_af32354a4d8d1275db35660a96a2cfa3ea35e09d567643db467ad9edfbb0574acc}
+}]\index{V3\+D@{V3\+D}!Brick@{Brick}}\index{Brick@{Brick}!V3\+D@{V3\+D}}\item[{\em 
+\hypertarget{class_brick_af32354a4d8d1275db35660a96a2cfa3ea5a5f31986f285ab13f2cf5cd3022c5e2}{}V3\+D\label{class_brick_af32354a4d8d1275db35660a96a2cfa3ea5a5f31986f285ab13f2cf5cd3022c5e2}
+}]\index{\+\_\+102@{\+\_\+102}!Brick@{Brick}}\index{Brick@{Brick}!\+\_\+102@{\+\_\+102}}\item[{\em 
+\hypertarget{class_brick_af32354a4d8d1275db35660a96a2cfa3ea2cb1166fdee35603cf114800f3a101ef}{}\+\_\+102\label{class_brick_af32354a4d8d1275db35660a96a2cfa3ea2cb1166fdee35603cf114800f3a101ef}
+}]\index{\+\_\+10\+X@{\+\_\+10\+X}!Brick@{Brick}}\index{Brick@{Brick}!\+\_\+10\+X@{\+\_\+10\+X}}\item[{\em 
+\hypertarget{class_brick_af32354a4d8d1275db35660a96a2cfa3ea715641459a1350fed267ec501d8c27a5}{}\+\_\+10\+X\label{class_brick_af32354a4d8d1275db35660a96a2cfa3ea715641459a1350fed267ec501d8c27a5}
+}]\index{D@{D}!Brick@{Brick}}\index{Brick@{Brick}!D@{D}}\item[{\em 
+\hypertarget{class_brick_af32354a4d8d1275db35660a96a2cfa3ea33b4768f26d523132928e96355b5540f}{}D\label{class_brick_af32354a4d8d1275db35660a96a2cfa3ea33b4768f26d523132928e96355b5540f}
+}]\index{S\+D@{S\+D}!Brick@{Brick}}\index{Brick@{Brick}!S\+D@{S\+D}}\item[{\em 
+\hypertarget{class_brick_af32354a4d8d1275db35660a96a2cfa3ea961676a52649c6acfe35d6df2b89bbbf}{}S\+D\label{class_brick_af32354a4d8d1275db35660a96a2cfa3ea961676a52649c6acfe35d6df2b89bbbf}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_brick_aa29d678c3d901c7b18cbc3a27a51be17}{}\index{Brick@{Brick}!Brick@{Brick}}
+\index{Brick@{Brick}!Brick@{Brick}}
+\subsubsection[{Brick()}]{\setlength{\rightskip}{0pt plus 5cm}Brick\+::\+Brick (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_brick_aa29d678c3d901c7b18cbc3a27a51be17}
+\hypertarget{class_brick_a0e27476ccaeaed1d61a06bddf247c8ee}{}\index{Brick@{Brick}!````~Brick@{$\sim$\+Brick}}
+\index{````~Brick@{$\sim$\+Brick}!Brick@{Brick}}
+\subsubsection[{$\sim$\+Brick()}]{\setlength{\rightskip}{0pt plus 5cm}Brick\+::$\sim$\+Brick (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_brick_a0e27476ccaeaed1d61a06bddf247c8ee}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_brick_a1cddb42fe77c9b6d140004d01ff7ab5b}{}\index{Brick@{Brick}!chiffre@{chiffre}}
+\index{chiffre@{chiffre}!Brick@{Brick}}
+\subsubsection[{chiffre(std\+::string \&input)=0}]{\setlength{\rightskip}{0pt plus 5cm}virtual std\+::string Brick\+::chiffre (
+\begin{DoxyParamCaption}
+\item[{std\+::string \&}]{input}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_brick_a1cddb42fe77c9b6d140004d01ff7ab5b}
+
+
+Implemented in \hyperlink{class__102_a27ec62277364d81471ed4dbd72e7682b}{\+\_\+102}, \hyperlink{class_vigenere_a32b9c62addb46ad28e0dec30a4c0cd57}{Vigenere}, and \hyperlink{class_cesars_a0b166b0f93c0949e9f3422e8f6604baa}{Cesars}.
+
+\hypertarget{class_brick_afa3a68ba4f4babecadc6dfd05a2d2040}{}\index{Brick@{Brick}!dechiffre@{dechiffre}}
+\index{dechiffre@{dechiffre}!Brick@{Brick}}
+\subsubsection[{dechiffre(std\+::string \&input)=0}]{\setlength{\rightskip}{0pt plus 5cm}virtual std\+::string Brick\+::dechiffre (
+\begin{DoxyParamCaption}
+\item[{std\+::string \&}]{input}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_brick_afa3a68ba4f4babecadc6dfd05a2d2040}
+
+
+Implemented in \hyperlink{class__102_a998fb64410d54af6d71804811f685d09}{\+\_\+102}, \hyperlink{class_vigenere_aeca94f50deaf6416654ea99d5c1156ed}{Vigenere}, and \hyperlink{class_cesars_a9375601dc5baac952212a5125a862a06}{Cesars}.
+
+\hypertarget{class_brick_aeec3d78d8d03e207b4154ff06f637bbe}{}\index{Brick@{Brick}!get\+\_\+key@{get\+\_\+key}}
+\index{get\+\_\+key@{get\+\_\+key}!Brick@{Brick}}
+\subsubsection[{get\+\_\+key()=0}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Brick\+::get\+\_\+key (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_brick_aeec3d78d8d03e207b4154ff06f637bbe}
+
+
+Implemented in \hyperlink{class__102_a5fb39b8750033909e60a30facc3f3fe4}{\+\_\+102}, \hyperlink{class_vigenere_ac598d07e328e8b633348a0bab923321a}{Vigenere}, and \hyperlink{class_cesars_a8b5bcf3d698a1e11c9e398a61d3a46fc}{Cesars}.
+
+\hypertarget{class_brick_a3e683a0fa3648b5a758b6f12d57365ab}{}\index{Brick@{Brick}!get\+\_\+lib@{get\+\_\+lib}}
+\index{get\+\_\+lib@{get\+\_\+lib}!Brick@{Brick}}
+\subsubsection[{get\+\_\+lib(int lib)}]{\setlength{\rightskip}{0pt plus 5cm}void Brick\+::get\+\_\+lib (
+\begin{DoxyParamCaption}
+\item[{int}]{lib}
+\end{DoxyParamCaption}
+)}\label{class_brick_a3e683a0fa3648b5a758b6f12d57365ab}
+\hypertarget{class_brick_aa1e9b549787dedc030860f8c75482c8c}{}\index{Brick@{Brick}!present@{present}}
+\index{present@{present}!Brick@{Brick}}
+\subsubsection[{present()=0}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Brick\+::present (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_brick_aa1e9b549787dedc030860f8c75482c8c}
+
+
+Implemented in \hyperlink{class__102_afb7ce7c2953153f341ad5da9d3a21e9f}{\+\_\+102}, \hyperlink{class_vigenere_a51e5903d16e669efbd738e4554ec9a13}{Vigenere}, and \hyperlink{class_cesars_aaea2ab4fe1a9eacb640352e0a2d4b422}{Cesars}.
+
+\hypertarget{class_brick_af6ba737fda1fda2d3fba50de23cbaff0}{}\index{Brick@{Brick}!who@{who}}
+\index{who@{who}!Brick@{Brick}}
+\subsubsection[{who()=0}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf identity} Brick\+::who (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_brick_af6ba737fda1fda2d3fba50de23cbaff0}
+
+
+Implemented in \hyperlink{class__102_af9dd4029e18d0fc85f8e85ddbe29d7bd}{\+\_\+102}, \hyperlink{class_vigenere_a79338a4aa2e9cea19e06b14103917288}{Vigenere}, and \hyperlink{class_cesars_a4bec14795caf7d1accc9312b04f57eca}{Cesars}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_brick_ae1175c82acc7e4e74a4cbe27ba75ae66}{}\index{Brick@{Brick}!\+\_\+lib@{\+\_\+lib}}
+\index{\+\_\+lib@{\+\_\+lib}!Brick@{Brick}}
+\subsubsection[{\+\_\+lib}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ Brick\+::\+\_\+lib\hspace{0.3cm}{\ttfamily [protected]}}\label{class_brick_ae1175c82acc7e4e74a4cbe27ba75ae66}
+\hypertarget{class_brick_a990cb3ac8d11d28aa1fa68a4583ed704}{}\index{Brick@{Brick}!\+\_\+lib\+\_\+size@{\+\_\+lib\+\_\+size}}
+\index{\+\_\+lib\+\_\+size@{\+\_\+lib\+\_\+size}!Brick@{Brick}}
+\subsubsection[{\+\_\+lib\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}int Brick\+::\+\_\+lib\+\_\+size\hspace{0.3cm}{\ttfamily [protected]}}\label{class_brick_a990cb3ac8d11d28aa1fa68a4583ed704}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+includes/core/\hyperlink{_brick_8hpp}{Brick.\+hpp}\item 
+sources/core/\hyperlink{_brick_8cpp}{Brick.\+cpp}\end{DoxyCompactItemize}

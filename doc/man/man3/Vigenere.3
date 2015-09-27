@@ -1,0 +1,118 @@
+.TH "Vigenere" 3 "Sun Sep 27 2015" "encode-o-matic" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Vigenere \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Vigenere\&.hpp>\fP
+.PP
+Inherits \fBBrick\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBCheck_Vigenere\fP { \fBBAD_CARACTER\fP = 1, \fBBAD_LENGTH\fP = 2, \fBBAD_STRENGTH\fP = 3, \fBGOOD\fP = 4 }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBVigenere\fP ()"
+.br
+.ti -1c
+.RI "\fB~Vigenere\fP ()"
+.br
+.ti -1c
+.RI "void \fBpresent\fP ()"
+.br
+.ti -1c
+.RI "void \fBget_key\fP ()"
+.br
+.ti -1c
+.RI "char \fBerror_c\fP ()"
+.br
+.ti -1c
+.RI "\fBBrick::identity\fP \fBwho\fP ()"
+.br
+.ti -1c
+.RI "\fBCheck_Vigenere\fP \fBv_set_key\fP (std::string &key)"
+.br
+.ti -1c
+.RI "std::string \fBchiffre\fP (std::string &input)"
+.br
+.ti -1c
+.RI "std::string \fBdechiffre\fP (std::string &input)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::string \fB_key\fP"
+.br
+.ti -1c
+.RI "char \fB_carac_error\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBVigenere::Check_Vigenere\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIBAD_CARACTER \fP\fP
+.TP
+\fB\fIBAD_LENGTH \fP\fP
+.TP
+\fB\fIBAD_STRENGTH \fP\fP
+.TP
+\fB\fIGOOD \fP\fP
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Vigenere::Vigenere ()"
+
+.SS "Vigenere::~Vigenere ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "std::string Vigenere::chiffre (std::string & input)\fC [virtual]\fP"
+
+.PP
+Implements \fBBrick\fP\&.
+.SS "std::string Vigenere::dechiffre (std::string & input)\fC [virtual]\fP"
+
+.PP
+Implements \fBBrick\fP\&.
+.SS "char Vigenere::error_c ()"
+
+.SS "void Vigenere::get_key ()\fC [virtual]\fP"
+
+.PP
+Implements \fBBrick\fP\&.
+.SS "void Vigenere::present ()\fC [virtual]\fP"
+
+.PP
+Implements \fBBrick\fP\&.
+.SS "\fBVigenere::Check_Vigenere\fP Vigenere::v_set_key (std::string & key)"
+
+.SS "\fBBrick::identity\fP Vigenere::who ()\fC [virtual]\fP"
+
+.PP
+Implements \fBBrick\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "char Vigenere::_carac_error\fC [private]\fP"
+
+.SS "std::string Vigenere::_key\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for encode-o-matic from the source code\&.

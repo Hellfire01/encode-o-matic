@@ -1,5 +1,5 @@
 /*!
- * \file main.c
+ * \file main.cpp
  * \author Matthieu Raynaud de Fitte
  * \version 3.6
  * \date 10 janvier 2014

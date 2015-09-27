@@ -1,0 +1,112 @@
+.TH "Constructor" 3 "Sun Sep 27 2015" "encode-o-matic" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Constructor \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Constructor\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBempty_list\fP ()"
+.br
+.ti -1c
+.RI "bool \fBadd_to_list\fP (\fBBrick\fP *brk)"
+.br
+.ti -1c
+.RI "void \fBget_keys\fP ()"
+.br
+.ti -1c
+.RI "void \fBpresent\fP ()"
+.br
+.ti -1c
+.RI "bool \fBget_lib\fP (int lib)"
+.br
+.ti -1c
+.RI "bool \fBstatus\fP (bool verbose=false)"
+.br
+.ti -1c
+.RI "std::string * \fBchiffre\fP (std::string const &input, bool check=true)"
+.br
+.ti -1c
+.RI "std::string * \fBdechiffre\fP (std::string const &input, bool check=true)"
+.br
+.ti -1c
+.RI "\fBConstructor\fP ()"
+.br
+.ti -1c
+.RI "\fB~Constructor\fP ()"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBconfirm_lib\fP ()"
+.br
+.ti -1c
+.RI "void \fBset_lib\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fB_lib\fP"
+.br
+.ti -1c
+.RI "bool \fB_status_lib\fP"
+.br
+.ti -1c
+.RI "bool \fB_status_keys\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBBrick\fP * > \fB_list\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Constructor::Constructor ()"
+
+.SS "Constructor::~Constructor ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "bool Constructor::add_to_list (\fBBrick\fP * brk)"
+
+.SS "std::string * Constructor::chiffre (std::string const & input, bool check = \fCtrue\fP)"
+
+.SS "bool Constructor::confirm_lib ()\fC [private]\fP"
+
+.SS "std::string * Constructor::dechiffre (std::string const & input, bool check = \fCtrue\fP)"
+
+.SS "void Constructor::empty_list ()"
+
+.SS "void Constructor::get_keys ()"
+
+.SS "bool Constructor::get_lib (int lib)"
+
+.SS "void Constructor::present ()"
+
+.SS "void Constructor::set_lib ()\fC [private]\fP"
+
+.SS "bool Constructor::status (bool verbose = \fCfalse\fP)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "int Constructor::_lib\fC [private]\fP"
+
+.SS "std::vector<\fBBrick\fP *> Constructor::_list\fC [private]\fP"
+
+.SS "bool Constructor::_status_keys\fC [private]\fP"
+
+.SS "bool Constructor::_status_lib\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for encode-o-matic from the source code\&.

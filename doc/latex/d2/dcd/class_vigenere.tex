@@ -1,0 +1,173 @@
+\hypertarget{class_vigenere}{}\section{Vigenere Class Reference}
+\label{class_vigenere}\index{Vigenere@{Vigenere}}
+
+
+{\ttfamily \#include $<$Vigenere.\+hpp$>$}
+
+Inheritance diagram for Vigenere\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d2/dcd/class_vigenere}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_vigenere_a7c9057eacefc2b70c2f6376808ae24cd}{Check\+\_\+\+Vigenere} \{ \hyperlink{class_vigenere_a7c9057eacefc2b70c2f6376808ae24cda5b266a9ef8e022122a6361ed7b1156d3}{B\+A\+D\+\_\+\+C\+A\+R\+A\+C\+T\+E\+R} = 1, 
+\hyperlink{class_vigenere_a7c9057eacefc2b70c2f6376808ae24cdae6a81c51e7f8647713bd2b91e8a64387}{B\+A\+D\+\_\+\+L\+E\+N\+G\+T\+H} = 2, 
+\hyperlink{class_vigenere_a7c9057eacefc2b70c2f6376808ae24cda935938c6d3644eff451b497495b99c20}{B\+A\+D\+\_\+\+S\+T\+R\+E\+N\+G\+T\+H} = 3, 
+\hyperlink{class_vigenere_a7c9057eacefc2b70c2f6376808ae24cdaaaffac21a07163d0cbaad88a80e98ab7}{G\+O\+O\+D} = 4
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_vigenere_a7caf4a6411b74aaed0383f479bcf3c69}{Vigenere} ()
+\item 
+\hyperlink{class_vigenere_a63987a17306659d0ad5f19ac25b95018}{$\sim$\+Vigenere} ()
+\item 
+void \hyperlink{class_vigenere_a51e5903d16e669efbd738e4554ec9a13}{present} ()
+\item 
+void \hyperlink{class_vigenere_ac598d07e328e8b633348a0bab923321a}{get\+\_\+key} ()
+\item 
+char \hyperlink{class_vigenere_aabf8d436dc97f32534fd7901d92ac4b7}{error\+\_\+c} ()
+\item 
+\hyperlink{class_brick_af32354a4d8d1275db35660a96a2cfa3e}{Brick\+::identity} \hyperlink{class_vigenere_a79338a4aa2e9cea19e06b14103917288}{who} ()
+\item 
+\hyperlink{class_vigenere_a7c9057eacefc2b70c2f6376808ae24cd}{Check\+\_\+\+Vigenere} \hyperlink{class_vigenere_ad9f7e190fd51729c37d490c90b285c54}{v\+\_\+set\+\_\+key} (std\+::string \&key)
+\item 
+std\+::string \hyperlink{class_vigenere_a32b9c62addb46ad28e0dec30a4c0cd57}{chiffre} (std\+::string \&input)
+\item 
+std\+::string \hyperlink{class_vigenere_aeca94f50deaf6416654ea99d5c1156ed}{dechiffre} (std\+::string \&input)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{class_vigenere_af3de7bc9397a9355b64f538572c718de}{\+\_\+key}
+\item 
+char \hyperlink{class_vigenere_a230349bb11f185853ffb589503368122}{\+\_\+carac\+\_\+error}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{class_vigenere_a7c9057eacefc2b70c2f6376808ae24cd}{}\index{Vigenere@{Vigenere}!Check\+\_\+\+Vigenere@{Check\+\_\+\+Vigenere}}
+\index{Check\+\_\+\+Vigenere@{Check\+\_\+\+Vigenere}!Vigenere@{Vigenere}}
+\subsubsection[{Check\+\_\+\+Vigenere}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Vigenere\+::\+Check\+\_\+\+Vigenere}}\label{class_vigenere_a7c9057eacefc2b70c2f6376808ae24cd}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{B\+A\+D\+\_\+\+C\+A\+R\+A\+C\+T\+E\+R@{B\+A\+D\+\_\+\+C\+A\+R\+A\+C\+T\+E\+R}!Vigenere@{Vigenere}}\index{Vigenere@{Vigenere}!B\+A\+D\+\_\+\+C\+A\+R\+A\+C\+T\+E\+R@{B\+A\+D\+\_\+\+C\+A\+R\+A\+C\+T\+E\+R}}\item[{\em 
+\hypertarget{class_vigenere_a7c9057eacefc2b70c2f6376808ae24cda5b266a9ef8e022122a6361ed7b1156d3}{}B\+A\+D\+\_\+\+C\+A\+R\+A\+C\+T\+E\+R\label{class_vigenere_a7c9057eacefc2b70c2f6376808ae24cda5b266a9ef8e022122a6361ed7b1156d3}
+}]\index{B\+A\+D\+\_\+\+L\+E\+N\+G\+T\+H@{B\+A\+D\+\_\+\+L\+E\+N\+G\+T\+H}!Vigenere@{Vigenere}}\index{Vigenere@{Vigenere}!B\+A\+D\+\_\+\+L\+E\+N\+G\+T\+H@{B\+A\+D\+\_\+\+L\+E\+N\+G\+T\+H}}\item[{\em 
+\hypertarget{class_vigenere_a7c9057eacefc2b70c2f6376808ae24cdae6a81c51e7f8647713bd2b91e8a64387}{}B\+A\+D\+\_\+\+L\+E\+N\+G\+T\+H\label{class_vigenere_a7c9057eacefc2b70c2f6376808ae24cdae6a81c51e7f8647713bd2b91e8a64387}
+}]\index{B\+A\+D\+\_\+\+S\+T\+R\+E\+N\+G\+T\+H@{B\+A\+D\+\_\+\+S\+T\+R\+E\+N\+G\+T\+H}!Vigenere@{Vigenere}}\index{Vigenere@{Vigenere}!B\+A\+D\+\_\+\+S\+T\+R\+E\+N\+G\+T\+H@{B\+A\+D\+\_\+\+S\+T\+R\+E\+N\+G\+T\+H}}\item[{\em 
+\hypertarget{class_vigenere_a7c9057eacefc2b70c2f6376808ae24cda935938c6d3644eff451b497495b99c20}{}B\+A\+D\+\_\+\+S\+T\+R\+E\+N\+G\+T\+H\label{class_vigenere_a7c9057eacefc2b70c2f6376808ae24cda935938c6d3644eff451b497495b99c20}
+}]\index{G\+O\+O\+D@{G\+O\+O\+D}!Vigenere@{Vigenere}}\index{Vigenere@{Vigenere}!G\+O\+O\+D@{G\+O\+O\+D}}\item[{\em 
+\hypertarget{class_vigenere_a7c9057eacefc2b70c2f6376808ae24cdaaaffac21a07163d0cbaad88a80e98ab7}{}G\+O\+O\+D\label{class_vigenere_a7c9057eacefc2b70c2f6376808ae24cdaaaffac21a07163d0cbaad88a80e98ab7}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_vigenere_a7caf4a6411b74aaed0383f479bcf3c69}{}\index{Vigenere@{Vigenere}!Vigenere@{Vigenere}}
+\index{Vigenere@{Vigenere}!Vigenere@{Vigenere}}
+\subsubsection[{Vigenere()}]{\setlength{\rightskip}{0pt plus 5cm}Vigenere\+::\+Vigenere (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_vigenere_a7caf4a6411b74aaed0383f479bcf3c69}
+\hypertarget{class_vigenere_a63987a17306659d0ad5f19ac25b95018}{}\index{Vigenere@{Vigenere}!````~Vigenere@{$\sim$\+Vigenere}}
+\index{````~Vigenere@{$\sim$\+Vigenere}!Vigenere@{Vigenere}}
+\subsubsection[{$\sim$\+Vigenere()}]{\setlength{\rightskip}{0pt plus 5cm}Vigenere\+::$\sim$\+Vigenere (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_vigenere_a63987a17306659d0ad5f19ac25b95018}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_vigenere_a32b9c62addb46ad28e0dec30a4c0cd57}{}\index{Vigenere@{Vigenere}!chiffre@{chiffre}}
+\index{chiffre@{chiffre}!Vigenere@{Vigenere}}
+\subsubsection[{chiffre(std\+::string \&input)}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Vigenere\+::chiffre (
+\begin{DoxyParamCaption}
+\item[{std\+::string \&}]{input}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_vigenere_a32b9c62addb46ad28e0dec30a4c0cd57}
+
+
+Implements \hyperlink{class_brick_a1cddb42fe77c9b6d140004d01ff7ab5b}{Brick}.
+
+\hypertarget{class_vigenere_aeca94f50deaf6416654ea99d5c1156ed}{}\index{Vigenere@{Vigenere}!dechiffre@{dechiffre}}
+\index{dechiffre@{dechiffre}!Vigenere@{Vigenere}}
+\subsubsection[{dechiffre(std\+::string \&input)}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Vigenere\+::dechiffre (
+\begin{DoxyParamCaption}
+\item[{std\+::string \&}]{input}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_vigenere_aeca94f50deaf6416654ea99d5c1156ed}
+
+
+Implements \hyperlink{class_brick_afa3a68ba4f4babecadc6dfd05a2d2040}{Brick}.
+
+\hypertarget{class_vigenere_aabf8d436dc97f32534fd7901d92ac4b7}{}\index{Vigenere@{Vigenere}!error\+\_\+c@{error\+\_\+c}}
+\index{error\+\_\+c@{error\+\_\+c}!Vigenere@{Vigenere}}
+\subsubsection[{error\+\_\+c()}]{\setlength{\rightskip}{0pt plus 5cm}char Vigenere\+::error\+\_\+c (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_vigenere_aabf8d436dc97f32534fd7901d92ac4b7}
+\hypertarget{class_vigenere_ac598d07e328e8b633348a0bab923321a}{}\index{Vigenere@{Vigenere}!get\+\_\+key@{get\+\_\+key}}
+\index{get\+\_\+key@{get\+\_\+key}!Vigenere@{Vigenere}}
+\subsubsection[{get\+\_\+key()}]{\setlength{\rightskip}{0pt plus 5cm}void Vigenere\+::get\+\_\+key (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_vigenere_ac598d07e328e8b633348a0bab923321a}
+
+
+Implements \hyperlink{class_brick_aeec3d78d8d03e207b4154ff06f637bbe}{Brick}.
+
+\hypertarget{class_vigenere_a51e5903d16e669efbd738e4554ec9a13}{}\index{Vigenere@{Vigenere}!present@{present}}
+\index{present@{present}!Vigenere@{Vigenere}}
+\subsubsection[{present()}]{\setlength{\rightskip}{0pt plus 5cm}void Vigenere\+::present (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_vigenere_a51e5903d16e669efbd738e4554ec9a13}
+
+
+Implements \hyperlink{class_brick_aa1e9b549787dedc030860f8c75482c8c}{Brick}.
+
+\hypertarget{class_vigenere_ad9f7e190fd51729c37d490c90b285c54}{}\index{Vigenere@{Vigenere}!v\+\_\+set\+\_\+key@{v\+\_\+set\+\_\+key}}
+\index{v\+\_\+set\+\_\+key@{v\+\_\+set\+\_\+key}!Vigenere@{Vigenere}}
+\subsubsection[{v\+\_\+set\+\_\+key(std\+::string \&key)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vigenere\+::\+Check\+\_\+\+Vigenere} Vigenere\+::v\+\_\+set\+\_\+key (
+\begin{DoxyParamCaption}
+\item[{std\+::string \&}]{key}
+\end{DoxyParamCaption}
+)}\label{class_vigenere_ad9f7e190fd51729c37d490c90b285c54}
+\hypertarget{class_vigenere_a79338a4aa2e9cea19e06b14103917288}{}\index{Vigenere@{Vigenere}!who@{who}}
+\index{who@{who}!Vigenere@{Vigenere}}
+\subsubsection[{who()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Brick\+::identity} Vigenere\+::who (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_vigenere_a79338a4aa2e9cea19e06b14103917288}
+
+
+Implements \hyperlink{class_brick_af6ba737fda1fda2d3fba50de23cbaff0}{Brick}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_vigenere_a230349bb11f185853ffb589503368122}{}\index{Vigenere@{Vigenere}!\+\_\+carac\+\_\+error@{\+\_\+carac\+\_\+error}}
+\index{\+\_\+carac\+\_\+error@{\+\_\+carac\+\_\+error}!Vigenere@{Vigenere}}
+\subsubsection[{\+\_\+carac\+\_\+error}]{\setlength{\rightskip}{0pt plus 5cm}char Vigenere\+::\+\_\+carac\+\_\+error\hspace{0.3cm}{\ttfamily [private]}}\label{class_vigenere_a230349bb11f185853ffb589503368122}
+\hypertarget{class_vigenere_af3de7bc9397a9355b64f538572c718de}{}\index{Vigenere@{Vigenere}!\+\_\+key@{\+\_\+key}}
+\index{\+\_\+key@{\+\_\+key}!Vigenere@{Vigenere}}
+\subsubsection[{\+\_\+key}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Vigenere\+::\+\_\+key\hspace{0.3cm}{\ttfamily [private]}}\label{class_vigenere_af3de7bc9397a9355b64f538572c718de}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+includes/core/\hyperlink{_vigenere_8hpp}{Vigenere.\+hpp}\item 
+sources/core/bricks/\hyperlink{_vigenere_8cpp}{Vigenere.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,217 @@
+.TH "_102" 3 "Sun Sep 27 2015" "encode-o-matic" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+_102 \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <102\&.hpp>\fP
+.PP
+Inherits \fBBrick\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBCheck_102_key\fP { \fBBAD_CARACTER\fP = 1, \fBNOT_ENOUGH_NUMBERS\fP = 2, \fBNO_0\fP = 3, \fBINPUT_ERROR\fP = 4, \fBGOOD\fP = 5 }"
+.br
+.ti -1c
+.RI "enum \fBCheck_102_base\fP { \fBDUPLICATE\fP = 1, \fBNO_NEG\fP = 2, \fBBAD_CARAC\fP = 3, \fBNO_SPACE\fP = 4, \fBOK\fP = 5 }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBdechiffre\fP (std::string &input)"
+.br
+.ti -1c
+.RI "std::string \fBchiffre\fP (std::string &input)"
+.br
+.ti -1c
+.RI "virtual void \fBpresent\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBget_key\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBBrick::identity\fP \fBwho\fP ()"
+.br
+.ti -1c
+.RI "\fB_102\fP ()"
+.br
+.ti -1c
+.RI "\fB~_102\fP ()"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBkey_validator_102_base\fP (std::string key, const std::string lib)"
+.br
+.ti -1c
+.RI "int \fBinput_validator\fP (std::string str, const std::string lib)"
+.br
+.ti -1c
+.RI "int \fBnumbers_only\fP (std::string &input)"
+.br
+.ti -1c
+.RI "int \fBfast_check\fP (std::string &input)"
+.br
+.ti -1c
+.RI "int \fBwrite_matrix\fP (MatrixXd &out, std::string tmp)"
+.br
+.ti -1c
+.RI "int \fBlast_check\fP (MatrixXd &out)"
+.br
+.ti -1c
+.RI "void \fBmatrix_input_102\fP (MatrixXd &out)"
+.br
+.ti -1c
+.RI "int \fBwrite_matrix\fP (std::string tmp)"
+.br
+.ti -1c
+.RI "int \fBlast_check\fP ()"
+.br
+.ti -1c
+.RI "void \fBuser_input_to_matrix_base\fP (std::string &input)"
+.br
+.ti -1c
+.RI "\fBCheck_102_key\fP \fBkey_input\fP (std::string &input)"
+.br
+.ti -1c
+.RI "\fBCheck_102_base\fP \fBbase_input\fP (std::string &input)"
+.br
+.ti -1c
+.RI "char \fBbad_carac\fP ()"
+.br
+.ti -1c
+.RI "char \fBinput_validator\fP (std::string &input)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "char \fBbad_caracter\fP"
+.br
+.ti -1c
+.RI "bool \fBkey_check\fP"
+.br
+.ti -1c
+.RI "std::string \fBbase\fP"
+.br
+.ti -1c
+.RI "MatrixXd \fBkey_matrix\fP"
+.br
+.ti -1c
+.RI "MatrixXd \fBtext_matrix\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fB_102::Check_102_base\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIDUPLICATE \fP\fP
+.TP
+\fB\fINO_NEG \fP\fP
+.TP
+\fB\fIBAD_CARAC \fP\fP
+.TP
+\fB\fINO_SPACE \fP\fP
+.TP
+\fB\fIOK \fP\fP
+.SS "enum \fB_102::Check_102_key\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIBAD_CARACTER \fP\fP
+.TP
+\fB\fINOT_ENOUGH_NUMBERS \fP\fP
+.TP
+\fB\fINO_0 \fP\fP
+.TP
+\fB\fIINPUT_ERROR \fP\fP
+.TP
+\fB\fIGOOD \fP\fP
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "_102::_102 ()"
+
+.SS "_102::~_102 ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "char _102::bad_carac ()\fC [private]\fP"
+
+.SS "\fB_102::Check_102_base\fP _102::base_input (std::string & input)\fC [private]\fP"
+
+.SS "std::string _102::chiffre (std::string & input)\fC [virtual]\fP"
+
+.PP
+Implements \fBBrick\fP\&.
+.SS "std::string _102::dechiffre (std::string & input)\fC [virtual]\fP"
+
+.PP
+Implements \fBBrick\fP\&.
+.SS "int _102::fast_check (std::string & input)\fC [private]\fP"
+
+.SS "void _102::get_key ()\fC [virtual]\fP"
+
+.PP
+Implements \fBBrick\fP\&.
+.SS "int _102::input_validator (std::string str, const std::string lib)\fC [private]\fP"
+
+.SS "char _102::input_validator (std::string & input)\fC [private]\fP"
+
+.SS "\fB_102::Check_102_key\fP _102::key_input (std::string & input)\fC [private]\fP"
+
+.SS "int _102::key_validator_102_base (std::string key, const std::string lib)\fC [private]\fP"
+
+.SS "int _102::last_check (MatrixXd & out)\fC [private]\fP"
+
+.SS "int _102::last_check ()\fC [private]\fP"
+
+.SS "void _102::matrix_input_102 (MatrixXd & out)\fC [private]\fP"
+
+.SS "int _102::numbers_only (std::string & input)\fC [private]\fP"
+
+.SS "void _102::present ()\fC [virtual]\fP"
+
+.PP
+Implements \fBBrick\fP\&.
+.SS "void _102::user_input_to_matrix_base (std::string & input)\fC [private]\fP"
+
+.SS "\fBBrick::identity\fP _102::who ()\fC [virtual]\fP"
+
+.PP
+Implements \fBBrick\fP\&.
+.SS "int _102::write_matrix (MatrixXd & out, std::string tmp)\fC [private]\fP"
+
+.SS "int _102::write_matrix (std::string tmp)\fC [private]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "char _102::bad_caracter\fC [private]\fP"
+
+.SS "std::string _102::base\fC [private]\fP"
+
+.SS "bool _102::key_check\fC [private]\fP"
+
+.SS "MatrixXd _102::key_matrix\fC [private]\fP"
+
+.SS "MatrixXd _102::text_matrix\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for encode-o-matic from the source code\&.
